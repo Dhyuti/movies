@@ -1,0 +1,44 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/main2.css' %}">
+</head>
+<body>
+<CENTER>
+<div class ="m">
+<br>
+<br>
+<h1>AVAILABLE MOVIES</h1>
+<br>
+<br>
+<div class="movies">
+{% for mov in movs %}
+<div class="mov">
+<CENTER>
+<div class="dis">
+{{mov.name}}
+</div>
+<br>
+<br>
+<img src="{{baseUrl}}/{{mov.img}}">
+</img>
+<br>
+<br>
+<form action="video" method="post">
+{% csrf_token%}
+<input type="submit" value="Watch now">
+</form>
+</CENTER>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endfor %}
+</div>
+</div>
+</CENTER>
+</body>
+</html>

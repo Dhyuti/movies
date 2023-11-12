@@ -1,0 +1,70 @@
+<!Doctype html>
+<head>
+<title>
+Dhyuchansu movies
+</title>
+</head>
+
+<style>
+body{background-color: #003154;}
+
+.for{
+height:300px;
+width:200px;
+border:5px solid white;
+padding:50px;
+}
+.fon{
+color:white;
+font-size:25px;
+margin-top:60px
+margin-left:30px;
+}
+h1{
+color:#FFFFFF;
+}
+</style>
+
+<center>
+<body>
+<h1>LOGIN</h1>
+
+
+<form action='login' method='post'>
+{% csrf_token%}
+
+<div class="for">
+<div class="for1">
+<div class="fon">
+
+
+
+<input type="text" name="username" placeholder="username" required><br><br><br><br>
+<input type="password" name="password" placeholder="password" required><br><br><br><br>
+<input type="submit" value="Login">
+
+</div>
+<br>
+<br>
+{% for message in messages %}
+<h3> {{message}}  </h3>
+{% endfor %}
+<br>
+<style>
+input[type=submit]{
+height:25px;
+width:100px;
+color:white;
+padding:20px;
+background-image:-webkit-radial-gradient(orange, purple);
+align-text:center;}
+</style>
+<br>
+<br>
+</form>
+</center>
+</div>
+</div>
+</form>
+</body>
+</html>

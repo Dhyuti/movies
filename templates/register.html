@@ -1,0 +1,81 @@
+﻿<HTML>
+<title>Registration</title>
+<head>
+<style>
+input[type=submit]{background-image: -webkit-linear-gradient(orange,purple);padding: 16px 32px;color:white;margin: 4px 2px;
+cursor: pointer;}
+h3{
+color:white;margin-bottom:5px;
+}
+</style>
+</head>
+
+<body style="background-color:#003153;">
+
+
+<br><p style="text-align:center;font-size:30px;font-style:bold;color:white;">REGISTERATION</p>
+
+
+<CENTER>
+<div style="width:300px;height:830px;border:1px solid white;text-align:left;color:white;">
+
+<form action="register" method="post">
+{% csrf_token %}
+<br> 
+<br> &nbsp; &nbsp;&nbsp;&nbsp;<input type:"text" name="first_name" placeholder="Enter first name" required></br>
+
+<br>
+<br> &nbsp; &nbsp;&nbsp;&nbsp;<input type:"text" name="last_name" placeholder="Enter last name" required></br>
+
+
+<br> 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type:"text" name="username" placeholder="Enter username" required></br>
+
+
+<br> 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" placeholder="Enter email-address" required></br>
+
+<div class="container">
+<br> 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password1" placeholder="Enter password" minlength="8" required></br>
+
+<br> 
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password2" placeholder="Reconfirm password" minlength="8" required></br>
+</div>
+
+<div id="message">
+<p id="length" class="invalid">&nbsp;&nbsp;Minimum 8 characters required</p>
+</div>
+
+<br></br>
+
+
+
+
+<br> &nbsp; &nbsp; Amount To Be Paid = ₹***</br>
+<br></br>
+<br> &nbsp; &nbsp; Card Details:</br>
+
+<br>&nbsp; &nbsp;<input type="radio" id="Debit" name="Card" value="Debit" checked required;>
+<label for="Debit">Debit</label></br>
+
+<br>&nbsp; &nbsp;<input type="radio" id="Credit" name="Card" value="Credit" checked required;>
+<label for="Credit">Credit</label></br>
+
+<br></br>
+
+<br><CENTER>
+<input type="submit" value="Pay to proceed">
+<div>
+{% for message in messages %}
+<h3> {{message}}  </h3>
+{% endfor %}
+</div>
+
+</div>
+</CENTER>
+</form>
+
+</div>
+</body>
+</HTML>
