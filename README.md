@@ -17,6 +17,6 @@ python manage.py runserver
 
 ```
 ## Authors
-- Chandana P
+- Chandana P - https://github.com/channapd
 - Dhyuti Amit Tewani - https://github.com/Dhyuti
-- Suryamritha M
+- Suryamritha M - https://github.com/suryamritha
